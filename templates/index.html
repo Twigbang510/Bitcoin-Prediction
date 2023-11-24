@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Price Prediction</title>
+</head>
+<body>
+    <h1>Bitcoin Price Prediction</h1>
+
+    <!-- Form for user input -->
+    <form method="post" action="/">
+        <label for="input_date">Enter a date for prediction:</label>
+        <input type="date" id="input_date" name="input_date" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- Display the plot -->
+    {% if plot_image %}
+        <div>
+            <h2>Predicted Price Plot</h2>
+            <img src="data:image/png;base64,{{ plot_image }}" alt="Predicted Price Plot">
+        </div>
+    {% endif %}
+</body>
+</html>
